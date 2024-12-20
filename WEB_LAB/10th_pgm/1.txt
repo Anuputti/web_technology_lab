@@ -1,0 +1,2 @@
+Sample text file to experiment AJAX methodology. 
+AJAX => Asynchronous Javascript And XML

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Paper Layout</title>
+    <style>
+        body{
+        font-family:Arial,  sans-serif;
+        margin: 0;
+        padding: 0;
+        }
+        header{
+            background-color: rgb(249, 249, 249);
+           padding:13px;
+           margin: auto;
+           text-align: center;
+        }
+        header img{
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        nav {
+           overflow: hidden;
+           margin: 0 auto;
+           padding: 0px;
+           display: flex;
+           justify-content:left;
+           text-align: left;
+        }
+        nav a{
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 254, 254);
+            padding: 10px 15px;
+            font-size:large;
+            text-decoration: none;
+            width:20%;
+            justify-content:left;
+            display: flex;
+        }
+        section{
+            display: flex;
+            margin: 10px;
+        }
+        article{
+            background-color: rgb(246, 206, 97, 0.77);
+        padding: 15px;
+        margin-right: 20px;
+        flex: 1;
+        font-size: medium;
+    }
+    footer{
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 5px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+aside{
+
+    background-color: rgba(246, 206, 97, 0.77);
+    padding: 15px;
+    flex: 1;
+    font-size: medium;
+}
+figure{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+figure img{
+    width: 100%;
+    max-width: 300px;
+    height:auto;
+}
+figure figcaption{
+    color: red;
+    font-size: 0.9rem;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+
+}
+th,td{
+    padding: 8px;
+    text-align: left;
+}
+th{
+    background-color: blanchedalmond;
+}
+</style>
+
+</head>
+<body>
+    <header>
+        <img src="https://w7.pngwing.com/pngs/820/447/png-transparent-bbc-news-logo-others-television-text-logo.png" alt="logo">
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">World</a>
+        <a href="#">Sports</a>
+        <a href="#">Entertainment</a>
+        <a href="#">Contact</a>
+   
+    </nav>
+    <section>
+        <article>
+        <h2>LATEST NEWS</h2>
+        <p>View the latest news and breaking news today for U.S., world, weather, entertainment, politics and health at CNN.com. </p>
+        <figure>
+            <img src="https://media.istockphoto.com/id/1289018102/photo/female-anchor-presenting-the-breaking-news-about-vaccine-accessibility.jpg?s=612x612&w=0&k=20&c=2LqCLlhdIDyUNFSgHgYX380TusFNv59oyjDHjHMY4iw=" alt="News image">
+            <figcaption>Breaking News</figcaption>
+
+           
+     </figure>
+        <table>
+           
+                <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Headlines</th>
+                   
+                </tr>
+           
+            </thead>
+            <tbody>
+                <tr>
+                    <td>World</td>
+                    <td>Gobal submit 2024:Key elements</td>
+                </tr>
+                <tr>
+                    <td>Sports</td>
+                    <td>
+                        Olympics 2024:Record Breaking Elements
+                    </td>
+                </tr>
+            </tbody>
+
+           
+        </table>
+    </article>
+        <aside>
+            <h3>Related News</h3>
+            <p>Check out the most trending news in recent catagory.....</p>
+
+        </aside>
+   
+    </section>
+    <footer>
+        @2024 news with NARAH O'DONNELL
+    </footer>
+</body>
+</html>

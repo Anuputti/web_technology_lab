@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <script>
+        function calculate(operation) {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            let result;
+
+            switch(operation) {
+                case '+': result = num1 + num2; break;
+                case '-': result = num1 - num2; break;
+                case '*': result = num1 * num2; break;
+                case '/': result = num1 / num2; break;
+                case '%': result = num1 % num2; break;
+                case 'pow': result = Math.pow(num1, num2); break;
+                case 'sq': result = Math.pow(num1, 2); break;
+                case 'sqrt': result = Math.sqrt(num1); break;
+                default: result = "Invalid operation";
+            }
+
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    </script>
+
+    <style>
+        body{
+            background-color: #d9eea3;
+        }
+        table{
+            margin:auto;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        .container{
+            width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgb(224, 139, 139);
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button{
+            padding: 5px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .result, label{
+            font-size: 18px;
+            font-weight: bold;
+        }
+        input{
+            padding: 5px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+        }     
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <h1>Simple Calculator</h1>
+            <tr>
+                <td>
+                    <label for="num1">Number 1:</label>
+                    <input type="number" name="num1" id="num1" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="num2">Number 2:</label>
+                    <input type="number" name="num2" id="num2" required>
+                </td>
+            </tr>
+            <br><br>
+            <tr>
+                <td>
+                    <div style="display:flex; gap:15px;padding:8px;">
+                        <button onclick="calculate('+')";>Add</button>
+                        <button onclick="calculate('-')";>Subtract</button>
+                        <button onclick="calculate('*')";>Multiply</button>
+                        <button onclick="calculate('/')";>Divide</button>
+                        <button onclick="calculate('%')";>Remainder</button>
+                        <button onclick="calculate('pow')";>power</button>
+                        <button onclick="calculate('sq')";>Square</button>
+                        <button onclick="calculate('sqrt')";>Square Root</button>
+                    </div>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="result" id="result" class="result">Result:</label>
+                </td>
+            </tr>
+        </table>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body{
+            background-color: rgb(223, 162, 122);
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        .container{
+            padding: 10px;
+            width: 50%;
+            margin:auto;
+            box-shadow: 0 0 10px black;
+            padding: 20px;
+            text-align: justify;
+            background-color: bisque;
+        }
+        table{
+            width:fit-content;
+            border-spacing: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select{
+            background-color: blanchedalmond;
+            width:max-content;
+            font-size: 13px;
+            margin:auto;
+            padding: 1px;
+        }
+        input[type="radio"],input[type="checkbox"]{
+            width:auto;
+            padding: 1px;
+            margin-right: 10px;
+        }
+        input[type="submit"]{
+            background-color: rgb(245, 210, 14);
+            width:50%;
+            font-size: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(238, 127, 63);
+        }
+        label{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:black;
+            font-size: 15px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <div class="container">
+        <form action="#" method="get">
+          <table>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td> <input type="text" id="name" name="Name"  placeholder="Enter your name"></td>
+            </tr>
+            <tr>
+                <td> <label for="email">Email:</td>
+                <td> <input type="email" id="email" name="Email"  placeholder="Enter your email"></td>
+            </tr>
+            <tr>
+                <td> <label for="pword">Password:</td>
+                <td> <input type="password" id="pword" placeholder="Enter the password" name="Password"></td>
+            </tr>
+            <tr>
+                <td><label for="Gender">Gender:</label> </td>
+                <td>
+                    <input type="radio" id="male" name="Male">
+                     <label for="male">Male</label>
+                     <input type="radio" id="female" name="Female">
+                     <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="country">Country:</label></td>
+                <td> 
+                    <select id="country" name="country" required>
+                        <option value="">--select country--</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="Singapore">Singapore</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="hobby">Hobbies:</label></td>
+                <td>
+                    <input type="checkbox" id="reading" name="Reading" value="read">
+                    <label for="reading">Reading</label>
+                    <input type="checkbox" id="sports" name="aports" value="sports">
+                    <label for="sports">Sports</label>
+                    <input type="checkbox" id="cycling" name="cycling">
+                    <label for="cycling">Cycling</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Register">
+                </td>
+            </tr>
+          </table>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Demonstration</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: bisque;
+        }
+        .container{
+            width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgb(241, 180, 90);
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button{
+            background-color: rgb(68, 28, 28);
+            color: white;
+            border-radius: 20px;
+        }
+        .output{
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is an example of using AJAX to fetch data from a server.</h1>
+    <div class="container">
+        <h1>AJAX Examples</h1>
+        <hr>
+        <h2>a. Javascript ajax() request</h2>
+        <button onclick="loadDoc()">Load Text (Jscript) </button>
+        <br><br>
+        <div class="output" id="outputJS">Text content will be loaded here.</div>
+
+        <h2>b. jQuery ajax() request</h2>
+        <button id="loadTextJQuery">Load Text (jQuery)</button> <br><br>
+        <div id="outputJQuery" class="output">Text content will be loaded here.</div>
+
+        <h2>c. Using getJSON() method jQuery</h2>
+        <button id="loadJSON">Load JSON</button> <br><br>
+        <div id="outputJSON" class="output">JSON content will be loaded here.</div>
+
+        <h2>d. Using parseJSON()</h2>
+        <button id="parseJSON">Parse JSON data</button><br><br>
+        <div id="parseOP" class="output">JSON content will be parsed here</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // a. AJAX using JavaScript
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("outputJS").innerHTML = this.responseText;
+            }
+            xhttp.open("GET","1.txt");
+            xhttp.send();
+        }
+
+        // b. AJAX using jQuery
+        $('#loadTextJQuery').click(function () {
+            $.ajax({
+            url: '1.txt', // Specify the text file to load
+            method: 'GET',
+            success: function (data) {
+                $('#outputJQuery').text(data);
+                },
+            error: function () {
+                $('#outputJQuery').text('Failed to load content.');
+            }
+            });
+        });
+
+        // c. Using getJSON() to load JSON data
+        $('#loadJSON').click(function () {
+            $.getJSON('1.json', function (data) {
+                let output = '<ol>';
+                data.forEach(function (item) {
+                    output += `<li>${item.name} - ${item.age}</li>`;
+                });
+            output += '</ol>';
+            $('#outputJSON').html(output);
+            });
+        });
+
+        //d. Using parseJSON()
+        $('#parseJSON').click(function () {
+            const jsonString = '{"students":[{"name":"John","age":20},{"name":"Jane","age":22}]}';
+            const parsedData = $.parseJSON(jsonString);
+            let output = '<ul>';
+            parsedData.students.forEach(function (student) {
+                output += `<li>${student.name} - ${student.age}</li>`;
+            });
+            output += '</ul>';
+            $('#parseOP').html(output);
+        });
+    </script>
+</body>
+</html>
